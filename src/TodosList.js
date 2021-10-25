@@ -26,8 +26,8 @@ const TodosList = (props) => {
     <>
       <div className="null" style={{textAlign: "center", margin: "1rem"}}>
         <h1 style={{color: "rgb(1 1 1 / 39%)"}}>Empty List</h1>
-        <p style={{color: "rgb(1 1 1 / 50%)"}}>Add Todo Items</p>
-      </div>
+          <p style={{color: "rgb(1 1 1 / 50%)"}}>Add Todo Items</p>
+        </div>
     </>
   );
 };
