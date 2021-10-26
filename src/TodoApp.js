@@ -6,39 +6,24 @@ import TodoForm from "./TodoForm";
 
 const TodoApp = () => {
   const intiolTodos = JSON.parse(window.localStorage.getItem("todos") || "[]");
-  const {todos, addTodo, removeTodo, updateTodoCheck, editTodo} = useTodoState(intiolTodos);
+  const {todos, addTodo, removeTodo, updateTodoCheck, editTodo} =
+    useTodoState(intiolTodos);
   useEffect(() => {
     window.localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   return (
-    <Paper
-      style={{
-        padding: 0,
-        margin: 0,
-        height: "100vh",
-        backgroundColor: "#ddd",
-      }}
-      elevation={0}
-    >
-      <AppBar color="primary" position="static" style={{height: "64px"}}>
-        <Toolbar>
-          <Typography color="inhert"> TODOS App </Typography>
-        </Toolbar>
-      </AppBar>
-
-      <Grid container justifyContent="center" style={{marginTop: "1rem"}}>
-        <Grid item xs={11} md={8} lg={4}>
-          <TodoForm addTodo={addTodo} />
-          <TodosList
-            todo={todos}
-            remove={removeTodo}
-            toggleTodo={updateTodoCheck}
-            editTodo={editTodo}
-          />
-        </Grid>
+    <Grid container justifyContent="center" style={{marginTop: "1rem"}}>
+      <Grid item xs={11} md={8} lg={4}>
+        <TodoForm addTodo={addTodo} />
+        <TodosList
+          todo={todos}
+          remove={removeTodo}
+          toggleTodo={updateTodoCheck}
+          editTodo={editTodo}
+        />
       </Grid>
-    </Paper>
+    </Grid>
   );
 };
 
