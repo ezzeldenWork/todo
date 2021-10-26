@@ -54,20 +54,20 @@ function Form(props) {
           <MenuItem value="spanish">Spanish</MenuItem>
         </Select>
 
-        <form className={classes.form}>
+        <form className={classes.form} action="/app">
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">{email}</InputLabel>
-            <Input id="email" name="email" autoFocus></Input>
+            <Input id="email" type="email" name="email" autoFocus></Input>
           </FormControl>
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="password">{password}</InputLabel>
-            <Input id="password" name="password"></Input>
+            <Input id="password" type="password" name="password"></Input>
           </FormControl>
           <FormControlLabel
             control={<Checkbox color="primary" />}
             label={rememberMe}
           />
-          <Link
+          {/* <Link
             to="/app"
             style={{
               width: "90%",
@@ -78,11 +78,13 @@ function Form(props) {
               textAlign: "center",
               textDecoration: "none",
               margin: "0 auto",
-              borderRadius: "5px"
+              borderRadius: "5px", 
             }}
-          >
+          > */}
+           <Button variant="contained"  type="submit" fullWidth color="primary">
             {signIn}
-          </Link>
+          </Button>
+          {/* </Link> */}
         </form>
       </Paper>
     </min>
